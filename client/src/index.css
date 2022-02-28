@@ -1,3 +1,5 @@
+@import url('https://www.fontspace.com/galguna-font-f52799'); 
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +7,47 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #D8E9F0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#nav-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+/* #app-name{
+  font-family: ;
+} */
+
+.nav-button{
+  border: 2px solid #4AA0D5;
+  background-color: #D8E9F0;
+  
+}
+
+.nav-button:hover{
+  background-color: #4AA0D5;
+  color: #303030;
+  font-weight: bolder;
+}
+
+.logo-img{
+  padding-left: 20px;
+}
+
+
