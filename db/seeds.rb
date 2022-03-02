@@ -18,9 +18,9 @@ p3 = Pet.create(name: 'Brody', species: 'Dog', image: 'https://blogger.googleuse
 # Vaxxes
 v1 = Vaccination.create(name: 'Rabies Vaccine', description: 'This vaccine protects against the rabies virus', date_received: "2022-02-27 22:39:27.278572000 +0000", expiration_date: "2022-02-28 22:39:27.278572000 +0000", name_of_vet_clinic: 'Acton Animal Hospital', user_id: u1.id, pet_id: p1.id)
 
-v2 = v1 = Vaccination.create(name: 'Rabies Vaccine', description: 'This vaccine protects against the rabies virus', date_received: "2022-02-27 22:39:27.278572000 +0000", expiration_date: "2022-02-28 22:39:27.278572000 +0000", name_of_vet_clinic: 'Acton Animal Hospital', user_id: u2.id, pet_id: p2.id)
+v2 = Vaccination.create(name: 'Rabies Vaccine', description: 'This vaccine protects against the rabies virus', date_received: "2022-02-27 22:39:27.278572000 +0000", expiration_date: "2022-02-28 22:39:27.278572000 +0000", name_of_vet_clinic: 'Acton Animal Hospital', user_id: u2.id, pet_id: p2.id)
 
-v3 = v1 = Vaccination.create(name: 'Rabies Vaccine', description: 'This vaccine protects against the rabies virus', date_received: "2022-02-27 22:39:27.278572000 +0000", expiration_date: "2022-02-28 22:39:27.278572000 +0000", name_of_vet_clinic: 'Acton Animal Hospital', user_id: u1.id, pet_id: p3.id)
+v3 = Vaccination.create(name: 'Rabies Vaccine', description: 'This vaccine protects against the rabies virus', date_received: "2022-02-27 22:39:27.278572000 +0000", expiration_date: "2022-02-28 22:39:27.278572000 +0000", name_of_vet_clinic: 'Acton Animal Hospital', user_id: u1.id, pet_id: p3.id)
 
 
  puts "Seeding done!"
