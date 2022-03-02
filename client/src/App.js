@@ -21,19 +21,21 @@ function App() {
     })}, [])
 
   return (
-    <div>
-      <NavBar user={user} setUser={setUser}/>
-      <Switch>
-        <Route exact path="/">
-          {(!user) ? <Landing /> : <UserHome user={user}/>} 
-        </Route>
-        <Route path="/signup">
-          {(!user) ? <Signup setUser={setUser}/> : <div>Already signed up?</div>}
-        </Route>
-        <Route path="/login">
-          {(!user) ? <Login setUser={setUser} />: <div>Already Logged In?</div>}
-        </Route>
-      </Switch>
+    <div id='app-container'>
+      <div id='main-content'>
+        <NavBar user={user} setUser={setUser}/>
+        <Switch>
+          <Route exact path="/">
+            {(!user) ? <Landing /> : <UserHome user={user}/>} 
+          </Route>
+          <Route path="/signup">
+            {(!user) ? <Signup setUser={setUser}/> : <div>Already signed up?</div>}
+          </Route>
+          <Route path="/login">
+            {(!user) ? <Login setUser={setUser} />: <div>Already Logged In?</div>}
+          </Route>
+        </Switch>
+      </div>
     </div>
   )}
 

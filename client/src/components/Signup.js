@@ -52,8 +52,8 @@ function Signup( {setUser} ) {
                     <input name="first_name" placeholder="First Name" className="user-input" onChange={handleChange}></input>
                     <input name="last_name" placeholder="Last Name" className="user-input" onChange={handleChange}></input>
                     <input name="username" placeholder="Username" className="user-input" onChange={handleChange}></input>
-                    <input name="state" placeholder="State" className="user-input" onChange={handleChange}></input>
                     <input name="password" type="password" placeholder="Password" className="user-input" onChange={handleChange}></input>
+                    <input name="state" placeholder="State" className="user-input" onChange={handleChange}></input>
                     {errors.length > 0 ? <div className="error-container">{errors.map(error => <p className="error" key={error}>{error}</p>)}</div> : <div></div>}
                     <input type="submit" value="Sign Up" className="form-button"></input>
                 </form>

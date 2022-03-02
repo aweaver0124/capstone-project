@@ -22,7 +22,7 @@ function NavBar( {user, setUser} ) {
                         to="/" 
                         exact
                         > 
-                        <img className='logo-img' src={logo} alt="logo" width='150px' height='100px'/>
+                        <img className='logo-img' src={logo} alt="logo" width='200px' height='150px'/>
                     </NavLink>
                 </div>
             <nav>
@@ -55,7 +55,7 @@ function NavBar( {user, setUser} ) {
                         to="/" 
                         exact
                         > 
-                        <img className='logo-img' src={logo} alt="logo" width='150px' height='100px'/>
+                        <img className='logo-img' src={logo} alt="logo" width='200px' height='150px'/>
                     </NavLink>
                 </div>
                 <h1 id='app-name'>VaxTrack</h1>

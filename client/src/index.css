@@ -19,20 +19,24 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
+  /* margin: 20px; */
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
+  padding-right: 50px;
   display: flex;
-  gap: 50px;
+  gap: 30px;
   align-items: center;
 }
 
-/* #app-name{
-  font-family: ;
-} */
+#app-name{
+  font-size: 70px;
+  padding: 0px;
+  margin-top: 50px;
+  position: bottom;
+  
+}
 
 .nav-button{
   border: 2px solid #4AA0D5;
@@ -50,4 +54,69 @@ nav ul {
   padding-left: 20px;
 }
 
+#landing-img-container{
+  background-color: white;
+  border: 4px solid #4AA0D5;
+  width: 634px;
+  text-align: center;
+  margin-left: 150px;
+  margin-top: 100px;
+  float: left;
+}
 
+#landing-img{
+  padding: 15px;
+}
+
+#landing-paragraph{
+  width: 400px;
+  text-align: left;
+  margin-top: 170px;
+  float: right;
+  padding-left: 80px;
+}
+
+#landing-stuff{
+  display: inline-block;
+}
+
+#signup-form-container{
+  background-color: white;
+  width: 400px;
+  height: 500px;
+  text-align: center;
+  padding: auto;
+  margin: auto;
+  border: 3px solid #4AA0D5;
+}
+
+#pet-thumbnail-holder{
+  background-color: white;
+  border: 3px solid #4AA0D5;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.pet-thumbnail{
+  background-color: white;
+  border: 2px solid #4AA0D5;
+  text-align: center;
+  padding: 15px;
+  width: 290px;
+  height: 350px;
+  display: inline-block;
+}
+
+#my-pets{
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+#pet-name{
+  margin: 0px;
+}
+
+h3{
+  text-align: center;
+}
