@@ -12,4 +12,14 @@ class PetsController < ApplicationController
         pet = Pet.find_by(id: params[:id])
         render json: pet, include: :vaccinations
     end
+
+    def destroy
+        pet = Pet.find_by(id: params[:id])
+        if pet
+            pet.destroy
+            head :no_content
+        else
+            render json: { error: "Workout not found" }, status: :not_found
+        end
+    end
 end

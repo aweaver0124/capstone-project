@@ -8,14 +8,16 @@ function UserHome( {user} ){
         if (user.id) {
          fetch('/pets')
           .then(res => res.json())
-          .then(workouts => setPets(workouts))
+          .then(data => setPets(data))
          }
        }, [user])
 
-       console.log(pets)
+       function onDelete(petToDelete) {
+        setPets(pets.filter(pet => pet.id !== petToDelete.id))
+    }
 
       const petThumbnail = pets.map(pet => {
-           return <PetThumbnail name={pet.name}  image={pet.image} />
+           return <PetThumbnail key={pet.id} pet={pet} name={pet.name}  image={pet.image} onDelete={onDelete} />
        })
 
        if (petThumbnail.length > 0){
