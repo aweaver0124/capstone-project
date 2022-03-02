@@ -1,9 +1,6 @@
 import { NavLink, useHistory } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 
-
-
-
 function NavBar( {user, setUser} ) {
     let history = useHistory();
     function handleLogout(){

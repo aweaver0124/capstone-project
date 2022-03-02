@@ -10,7 +10,11 @@ class PetsController < ApplicationController
 
     def show 
         pet = Pet.find_by(id: params[:id])
-        render json: pet, include: :vaccinations
+        if (pet)
+            render json: pet, include: :vaccinations
+        else
+            render json: { error: "Pet not found"}, status: :not_found
+        end
     end
 
     def destroy

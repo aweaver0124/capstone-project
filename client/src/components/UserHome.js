@@ -1,23 +1,14 @@
-import { useState, useEffect } from 'react';
+
 import PetThumbnail from './PetThumbnail';
 
-function UserHome( {user} ){
-    const [pets, setPets] = useState([]);
-
-    useEffect(() => {
-        if (user.id) {
-         fetch('/pets')
-          .then(res => res.json())
-          .then(data => setPets(data))
-         }
-       }, [user])
+function UserHome( {user, pets, setPets} ){
 
        function onDelete(petToDelete) {
-        setPets(pets.filter(pet => pet.id !== petToDelete.id))
+           setPets(pets.filter(pet => pet.id !== petToDelete.id))
     }
 
       const petThumbnail = pets.map(pet => {
-           return <PetThumbnail key={pet.id} pet={pet} name={pet.name}  image={pet.image} onDelete={onDelete} />
+           return <PetThumbnail key={pet.id} pet={pet} name={pet.name} pets={pets} image={pet.image} onDelete={onDelete} />
        })
 
        if (petThumbnail.length > 0){

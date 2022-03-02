@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
-
-function PetThumbnail({ key, name, image, pet, onDelete }){
+function PetThumbnail({ name, image, pet, onDelete }){
 
 function handleDelete() {
     fetch(`/pets/${pet.id}`, {
@@ -10,14 +9,10 @@ function handleDelete() {
     .then(onDelete(pet));
 }
 
-console.log(pet)
-
-
-
     return(
         <div className='pet-thumbnail'>
             <Link to={`/pets/${pet.id}`}>
-            <div className='pet-thumbnail-image' onClick={handleDelete}>
+            <div className='pet-thumbnail-image'>
                <img src={image} alt='user-pet' height='300px' width='280px' />
             </div>
             </Link>
