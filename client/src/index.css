@@ -120,3 +120,55 @@ nav ul {
 h3{
   text-align: center;
 }
+
+.pet-info-div{
+  display: inline-block;
+  width: 500px;
+  margin-left: 150px;
+}
+
+#pet-info{
+  vertical-align: top;
+}
+
+.pet-card-image{
+  background-color: white;
+  width: 370px;
+  height: 430px;
+  text-align: center;
+  border: 2px solid #4AA0D5;
+  margin-left: 50px;
+  margin-right: 100px;
+  display: inline-block;
+}
+.pet-image{
+  padding: 15px;
+}
+
+#vax-table{
+  background-color: white;
+}
+#header-row{
+  text-align: left;
+}
+
+.header{
+  text-align: left;
+}
+
+.table-button{
+  text-align: center;
+}
+
+#vax-container{
+  margin: auto;
+}
+
+#table-container{
+  margin: auto;
+}
+
+#vax-table{
+  margin: auto;
+  padding: 15px;
+}

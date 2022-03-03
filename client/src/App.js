@@ -5,6 +5,7 @@ import Login from './components/Login';
 import UserHome from './components/UserHome';
 import NavBar from './components/NavBar';
 import AddVax from './components/AddVax';
+import AddPet from './components/AddPet';
 
 
 import { Route, Switch } from 'react-router-dom';
@@ -52,6 +53,9 @@ function App() {
           </Route>
           <Route path="/add-a-vax">
             <AddVax />
+          </Route>
+          <Route>
+            <AddPet pets={pets} setPets={setPets} user={user}/>
           </Route>
         </Switch>
       </div>

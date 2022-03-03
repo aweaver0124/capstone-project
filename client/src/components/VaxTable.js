@@ -4,15 +4,15 @@ function VaxTable({ vaxxes }){
 return(
     <div id='vax-container'>
         <div id='table-container'>
-            <table>
+            <table id='vax-table'>
                 <thead>
-                    <tr>
-                        <th>Vaccine Name</th>
-                        <th>Description</th>
-                        <th>Date Received</th>
-                        <th>Expiration Date</th>
-                        <th>Clinic Name</th>
-                        <th>Actions</th>
+                    <tr id='header-row'>
+                        <th className='header' style={{width:'200px'}}>Vaccine Name</th>
+                        <th className='header' style={{width:'200px'}}>Description</th>
+                        <th className='header' style={{width:'200px'}}>Date Received</th>
+                        <th className='header' style={{width:'200px'}}>Expiration Date</th>
+                        <th className='header' style={{width:'200px'}}>Clinic Name</th>
+                        <th className='action-button' style={{width:'100px'}}>Actions</th>
                     </tr>
                 </thead>
                 <tbody>

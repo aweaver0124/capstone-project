@@ -31,15 +31,19 @@ const vaxxes = currentPet.vaccinations.map(vax => {
     return(
        <div id='pet-card'>
            <section id='pet-info'>
-               <img src={currentPet.image} alt="current pet" />
-               <h2>{currentPet.name}</h2>
-               <ul>
-                   {/* <li>{currentPet.user}</li>   */}
-                    <li><b>Breed</b>: {currentPet.breed}</li>
-                   <li><b>Age</b>: {currentPet.age}</li>
-                   <li><b>Gender</b>: {currentPet.gender}</li>
-                   <li><b>Personality</b>: {currentPet.personality}</li>
-               </ul>
+               <div className='pet-card-image'>
+                 <img className='pet-image' src={currentPet.image} alt="current pet" width='330px' height='400px'/>
+               </div>
+               <div className='pet-info-div'>
+                  <h2>{currentPet.name}</h2>
+                  <ul>
+                      {/* <li>{currentPet.user}</li>   */}
+                      <li><b>Breed</b>: {currentPet.breed}</li>
+                      <li><b>Age</b>: {currentPet.age}</li>
+                      <li><b>Gender</b>: {currentPet.gender}</li>
+                      <li><b>Personality</b>: {currentPet.personality}</li>
+                  </ul>
+               </div>
            </section> 
            <section id='vax-section'>
                <h3>Vaccinations</h3>

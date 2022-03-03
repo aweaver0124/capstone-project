@@ -17,6 +17,11 @@ class PetsController < ApplicationController
         end
     end
 
+    def create
+        pet = auth.pets.create!(pet_params)
+        render json: pet, status: :created
+    end
+
     def destroy
         pet = Pet.find_by(id: params[:id])
         if pet
@@ -25,5 +30,11 @@ class PetsController < ApplicationController
         else
             render json: { error: "Workout not found" }, status: :not_found
         end
+    end
+
+    private
+
+    def pet_params
+        params.permit(:name, :species, :image, :breed, :age, :gender, :personality, :user_id)
     end
 end
