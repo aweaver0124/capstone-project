@@ -15,6 +15,7 @@ import PetCard from './components/PetCard';
 function App() {
   const [user, setUser] = useState('')
   const [pets, setPets] = useState([]);
+  const [vaccines, setVaccines] = useState([])
 
   //  auth stuff
   useEffect(() => {
@@ -34,6 +35,12 @@ function App() {
        }
      }, [user])
 
+     useEffect(() => {
+       fetch('/vaccinations')
+       .then(res => res.json())
+       .then(data => setVaccines(data))
+     }, [])
+
   return (
     <div id='app-container'>
       <div id='main-content'>
@@ -49,7 +56,7 @@ function App() {
             {(!user) ? <Login setUser={setUser} />: <div>Already Logged In?</div>}
           </Route>
           <Route path="/pets/:petId">
-            <PetCard pets={pets}/>
+            <PetCard pets={pets} vaccines={vaccines} setVaccines={setVaccines} />
           </Route>
           <Route path="/add-a-vax">
             <AddVax />

@@ -45,8 +45,8 @@ function Signup( {setUser} ) {
     }
 
     return(
-        <div className='form-container'>
-            <div id='signup-form-container'>
+        <div className='sign-up'>
+            <div id='signup-container'>
                 <h1>Sign Up!</h1>
                 <form id='signup-form' onSubmit={handleSubmit}>
                     <input name="first_name" placeholder="First Name" className="user-input" onChange={handleChange}></input>

@@ -8,4 +8,14 @@ class VaccinationsController < ApplicationController
         vax = Vaccination.find_by(id: params[:id])
         render json: vax, include: :pet
     end
+
+    def destroy
+        vax = Vaccination.find_by(id: params[:id])
+        if vax
+            vax.destroy
+            head :no_content
+        else
+            render json: { error: "Pet not found" }, status: :not_found
+        end
+    end
 end

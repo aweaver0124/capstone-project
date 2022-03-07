@@ -28,7 +28,7 @@ class PetsController < ApplicationController
             pet.destroy
             head :no_content
         else
-            render json: { error: "Workout not found" }, status: :not_found
+            render json: { error: "Pet not found" }, status: :not_found
         end
     end
 

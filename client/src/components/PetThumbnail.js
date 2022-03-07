@@ -17,7 +17,7 @@ function handleDelete() {
             </div>
             </Link>
             <h1 id='pet-name'>{name}</h1>
-            <button id='delete-button' onClick={handleDelete}> X </button>
+            <button className='table-button' onClick={handleDelete}> X </button>
             
         </div>
     )

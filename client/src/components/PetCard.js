@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import VaxTable from './VaxTable';
 
 function PetCard({ pets }){
 const params = useParams();
 const [ currentPet, setCurrentPet ] = useState(pets.find(pet => pet.id === parseInt(params.petId)))
+
 
 useEffect(() => {
     if (params.petId) {
@@ -15,6 +16,7 @@ useEffect(() => {
     }
 }, [params.petId])
 
+
 const vaxxes = currentPet.vaccinations.map(vax => {
     return(
             <tr>
@@ -23,7 +25,7 @@ const vaxxes = currentPet.vaccinations.map(vax => {
                 <td>{vax.date_received}</td>
                 <td>{vax.expiration_date}</td>
                 <td>{vax.name_of_vet_clinic}</td>
-                <td><button> X </button></td>
+                <td><button className='table-button'> Remove </button></td>
             </tr>
     )
 })
@@ -43,11 +45,13 @@ const vaxxes = currentPet.vaccinations.map(vax => {
                       <li><b>Gender</b>: {currentPet.gender}</li>
                       <li><b>Personality</b>: {currentPet.personality}</li>
                   </ul>
+                  <div id='edit-pet'> <button className='button'> Edit </button></div>
                </div>
            </section> 
            <section id='vax-section'>
                <h3>Vaccinations</h3>
-               <VaxTable vaxxes={vaxxes}/>
+               {!currentPet.vaccinations ? <div id='empty-vaxxes'><p>You haven't added any vaccinations yet!</p>
+               <Link to={'/add-a-vax'}><button className='table-button'>Add Vaccination</button></Link></div> : <VaxTable vaxxes={vaxxes}/>}
            </section> 
        </div>
     )

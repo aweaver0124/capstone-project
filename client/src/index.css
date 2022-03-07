@@ -80,14 +80,27 @@ nav ul {
   display: inline-block;
 }
 
-#signup-form-container{
-  background-color: white;
-  width: 400px;
-  height: 500px;
-  text-align: center;
-  padding: auto;
-  margin: auto;
-  border: 3px solid #4AA0D5;
+#landing-stuff p{
+  font-size: larger;
+}
+#login-container, #signup-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: relative;
+  top: 50%;
+}
+
+#login-container h1, #signup-container h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+#login-form, #signup-form {
+  display: flex;
+  flex-flow: column;
+  padding: 15px;
+  width: 300px;
 }
 
 #pet-thumbnail-holder{
@@ -104,9 +117,10 @@ nav ul {
   text-align: center;
   padding: 15px;
   width: 290px;
-  height: 350px;
+  height: 360px;
   display: inline-block;
 }
+
 
 #my-pets{
   text-align: center;
@@ -124,8 +138,58 @@ h3{
 .pet-info-div{
   display: inline-block;
   width: 500px;
-  margin-left: 150px;
+  margin-left: 50px;
+  vertical-align: top;
+  margin-top: 60px;;
 }
+
+.pet-info-div ul {
+  list-style: none;
+}
+.pet-info-div li {
+  font-size: 30px;
+}
+
+.pet-info-div h2{
+  font-size: 40px;
+  text-align: center;
+}
+
+#edit-pet{
+  text-align: center;
+  
+}
+
+.button{
+  background-color: #D8E9F0;
+  border: 2px solid #4AA0D5;
+  width: 60px;
+}
+
+.button:hover{
+  background-color: #4AA0D5;
+  color: #303030;
+  font-weight: bolder;
+}
+
+.table-button{
+  background-color: white;
+  border: 2px solid #4AA0D5;
+}
+
+.table-button:hover{
+  color: #303030;
+  font-weight: bolder;
+}
+
+#add-vax-div{
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  width: 1133px;
+  margin-left: 183px;
+}
+
 
 #pet-info{
   vertical-align: top;
@@ -137,7 +201,7 @@ h3{
   height: 430px;
   text-align: center;
   border: 2px solid #4AA0D5;
-  margin-left: 50px;
+  margin-left: 250px;
   margin-right: 100px;
   display: inline-block;
 }
@@ -171,4 +235,8 @@ h3{
 #vax-table{
   margin: auto;
   padding: 15px;
+}
+
+#empty-vaxxes{
+  text-align: center;
 }

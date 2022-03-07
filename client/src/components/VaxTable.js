@@ -20,7 +20,7 @@ return(
                 </tbody>
             </table>
         </div>
-        <Link to={'/add-a-vax'}><button>Add Vaccination</button></Link>
+        <div id='add-vax-div'><Link to={'/add-a-vax'}><button className='table-button'>Add Vaccination</button></Link></div>
     </div>
 )
 
