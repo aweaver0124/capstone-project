@@ -17,6 +17,16 @@ class PetsController < ApplicationController
         end
     end
 
+    def update
+        pet = Pet.find_by(id: params[:id])
+        if pet
+            pet.update(pet_params)
+            render json: pet, status: :ok
+        else
+            render json: { error: "Workout not found" }, status: :not_found
+        end
+    end
+
     def create
         pet = auth.pets.create!(pet_params)
         render json: pet, status: :created

@@ -8,13 +8,14 @@ import AddVax from './components/AddVax';
 import AddPet from './components/AddPet';
 
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import PetCard from './components/PetCard';
 
 function App() {
   const [user, setUser] = useState('')
   const [pets, setPets] = useState([]);
+  const [currentPet, setCurrentPet] = useState({vaccinations: []})
   const [vaccines, setVaccines] = useState([])
 
   //  auth stuff
@@ -35,6 +36,7 @@ function App() {
        }
      }, [user])
 
+// fetch to vaccinations#index
      useEffect(() => {
        fetch('/vaccinations')
        .then(res => res.json())
@@ -56,10 +58,10 @@ function App() {
             {(!user) ? <Login setUser={setUser} />: <div>Already Logged In?</div>}
           </Route>
           <Route path="/pets/:petId">
-            <PetCard pets={pets} vaccines={vaccines} setVaccines={setVaccines} />
+            <PetCard currentPet={currentPet} setCurrentPet={setCurrentPet} />
           </Route>
           <Route path="/add-a-vax">
-            <AddVax />
+            <AddVax user={user} vaccines={vaccines} setVaccines={setVaccines} />
           </Route>
           <Route>
             <AddPet pets={pets} setPets={setPets} user={user}/>

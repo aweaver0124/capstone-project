@@ -30,6 +30,10 @@ nav ul {
   align-items: center;
 }
 
+#empty-vaxxes{
+  text-align: center;
+}
+
 #app-name{
   font-size: 70px;
   padding: 0px;
