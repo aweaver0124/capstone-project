@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 
 function VaxTable({ vaxxes, id }){
+
 return(
     <div id='vax-container'>
         <div id='table-container'>
             <table id='vax-table'>
                 <thead>
                     <tr id='header-row'>
+                        <th className='header' style={{width:'200px'}}>ID</th>
                         <th className='header' style={{width:'200px'}}>Vaccine Name</th>
                         <th className='header' style={{width:'200px'}}>Description</th>
                         <th className='header' style={{width:'200px'}}>Date Received</th>

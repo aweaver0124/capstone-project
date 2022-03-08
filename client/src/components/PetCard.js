@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 import VaxTable from './VaxTable';
+import DeleteVaxButton from './DeleteVaxButton';
 
-function PetCard({ user }){
+function PetCard({ setVaccines, vaccines }){
 const params = useParams();
 const [currentPet, setCurrentPet] = useState({vaccinations: []})
 const [showForm, setShowForm] = useState(false)
@@ -19,6 +20,13 @@ useEffect(() => {
         .then(data => setCurrentPet(data))
     }
 }, [params.petId])
+
+
+
+// const today = new Date()
+// const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+// console.log(date)
+
 
 function handleChange(e) {
     const key = e.target.name;
@@ -61,15 +69,20 @@ function showFormTrue(){
     )
 }
 
+function onDelete(vaxToDelete) {
+    setVaccines(vaccines.filter(vax => vax.id !== vaxToDelete.id))
+}
+
 const vaxxes = currentPet.vaccinations.map(vax => {
     return(
             <tr>
+                <td>{vax.id}</td>
                 <td>{vax.name}</td>
                 <td>{vax.description}</td>
                 <td>{vax.date_received}</td>
                 <td>{vax.expiration_date}</td>
                 <td>{vax.name_of_vet_clinic}</td>
-                <td><button className='table-button'> Remove </button></td>
+                <td><DeleteVaxButton vax={vax} onDelete={onDelete}/></td>
             </tr>
     )
 })

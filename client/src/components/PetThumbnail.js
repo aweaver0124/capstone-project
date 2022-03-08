@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 function PetThumbnail({ name, image, pet, onDelete }){
 
+    console.log(pet)
 function handleDelete() {
     fetch(`/pets/${pet.id}`, {
         method: 'DELETE'
