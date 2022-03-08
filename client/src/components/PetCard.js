@@ -59,7 +59,8 @@ function handleForm(){
 
 function showFormTrue(){
     return(
-        <div>
+        <div id='update-form-container'>
+            <h4>Update Pet Information</h4>
             <form id='update-pet-form' onSubmit={handleUpdate}>
             <input name="age" placeholder="Age" className="user-input" onChange={handleChange}></input>
             <input name="personality" placeholder="Personality" className="user-input" onChange={handleChange}></input>
@@ -76,7 +77,6 @@ function onDelete(vaxToDelete) {
 const vaxxes = currentPet.vaccinations.map(vax => {
     return(
             <tr>
-                <td>{vax.id}</td>
                 <td>{vax.name}</td>
                 <td>{vax.description}</td>
                 <td>{vax.date_received}</td>
