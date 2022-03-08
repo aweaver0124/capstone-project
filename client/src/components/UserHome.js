@@ -1,7 +1,7 @@
 
 import PetThumbnail from './PetThumbnail';
 
-function UserHome( {user, pets, setPets} ){
+function UserHome({ user, pets, setPets }){
 
        function onDelete(petToDelete) {
            setPets(pets.filter(pet => pet.id !== petToDelete.id))

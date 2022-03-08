@@ -9,6 +9,11 @@ class VaccinationsController < ApplicationController
         render json: vax, include: :pet
     end
 
+    def create
+        vax = Vaccination.create!(vax_params)
+        render json: vax, status: :created
+    end
+    
     def destroy
         vax = Vaccination.find_by(id: params[:id])
         if vax
@@ -17,5 +22,11 @@ class VaccinationsController < ApplicationController
         else
             render json: { error: "Pet not found" }, status: :not_found
         end
+    end
+
+    private
+
+    def vax_params
+        params.permit(:name, :description, :date_received, :expiration_date, :name_of_vet_clinic, :user_id, :pet_id)
     end
 end

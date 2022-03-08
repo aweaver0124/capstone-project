@@ -94,7 +94,7 @@ const vaxxes = currentPet.vaccinations.map(vax => {
             </section> 
             <section id='vax-section'>
                 <h3>Vaccinations</h3>
-                {vaxxes < 1 ? <div id='empty-vaxxes'><p>You haven't added any vaccinations yet!</p><Link to={'/add-a-vax'}><button className='table-button'>Add Vaccination</button></Link></div> : <VaxTable vaxxes={vaxxes}/> }
+                {vaxxes < 1 ? <div id='empty-vaxxes'><p>You haven't added any vaccinations yet!</p><Link to={'/add-a-vax/'}><button className='table-button'>Add Vaccination</button></Link></div> : <VaxTable vaxxes={vaxxes}/> }
             </section> 
         </div>
      )
