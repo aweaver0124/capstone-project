@@ -1,4 +1,6 @@
 class VaccinationsController < ApplicationController
+rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
+
     def index
         vaccinations = Vaccination.all
         render json: vaccinations, status: :ok
@@ -28,5 +30,9 @@ class VaccinationsController < ApplicationController
 
     def vax_params
         params.permit(:name, :description, :date_received, :expiration_date, :name_of_vet_clinic, :user_id, :pet_id)
+    end
+
+    def render_unprocessable_entity(invalid)
+        render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
     end
 end

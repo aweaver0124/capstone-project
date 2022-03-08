@@ -1,4 +1,6 @@
 class PetsController < ApplicationController
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
+    
     def index
         current_user = User.find_by(id: session[:user_id])
         if (current_user) 
@@ -47,4 +49,9 @@ class PetsController < ApplicationController
     def pet_params
         params.permit(:name, :species, :image, :breed, :age, :gender, :personality, :user_id)
     end
+
+    def render_unprocessable_entity(invalid)
+        render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+    end
+
 end

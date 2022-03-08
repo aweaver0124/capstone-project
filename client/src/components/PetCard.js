@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 
 import VaxTable from './VaxTable';
 
-function PetCard(){
+function PetCard({ user }){
 const params = useParams();
 const [currentPet, setCurrentPet] = useState({vaccinations: []})
 const [showForm, setShowForm] = useState(false)
@@ -11,7 +11,7 @@ const [updatePetForm, setUpdatePetForm] = useState({
     age: '',
     personality: '',
 })
-
+   
 useEffect(() => {
     if (params.petId) {
         fetch(`/pets/${params.petId}`)
@@ -27,7 +27,6 @@ function handleChange(e) {
 }
 
 function handleUpdate(){
-    
     fetch(`/pets/${params.petId}`, {
         method: 'PATCH',
         headers: {
@@ -94,7 +93,7 @@ const vaxxes = currentPet.vaccinations.map(vax => {
             </section> 
             <section id='vax-section'>
                 <h3>Vaccinations</h3>
-                {vaxxes < 1 ? <div id='empty-vaxxes'><p>You haven't added any vaccinations yet!</p><Link to={'/add-a-vax/'}><button className='table-button'>Add Vaccination</button></Link></div> : <VaxTable vaxxes={vaxxes}/> }
+                {vaxxes < 1 ? <div id='empty-vaxxes'><p>You haven't added any vaccinations yet!</p><Link to={`/addvax/${params.petId}`}><button className='table-button'>Add Vaccination</button></Link></div> : <VaxTable vaxxes={vaxxes} id={params.petId}/> }
             </section> 
         </div>
      )

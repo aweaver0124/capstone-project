@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function VaxTable({ vaxxes }){
+function VaxTable({ vaxxes, id }){
 return(
     <div id='vax-container'>
         <div id='table-container'>
@@ -20,7 +20,7 @@ return(
                 </tbody>
             </table>
         </div>
-        <div id='add-vax-div'><Link to={'/add-a-vax'}><button className='table-button'>Add Vaccination</button></Link></div>
+        <div id='add-vax-div'><Link to={`/addvax/${id}`}><button className='table-button'>Add Vaccination</button></Link></div>
     </div>
 )
 

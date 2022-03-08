@@ -60,10 +60,10 @@ function App() {
             {(!user) ? <Login setUser={setUser} />: <div>Already Logged In?</div>}
           </Route>
           <Route path="/pets/:petId">
-            <PetCard currentPet={currentPet} setCurrentPet={setCurrentPet} />
+            <PetCard currentPet={currentPet} setCurrentPet={setCurrentPet} user={user} pets={pets} setPets={setPets}/>
           </Route>
-          <Route path="/add-a-vax/">
-            <AddVax user={user} vaccines={vaccines} />
+          <Route path="/addvax/:petId">
+            <AddVax user={user} vaccines={vaccines} setVaccines={setVaccines} pets={pets} setPets={setPets} currentPet={currentPet} setCurrentPet={setCurrentPet}/>
           </Route>
           <Route>
             <AddPet pets={pets} setPets={setPets} user={user}/>

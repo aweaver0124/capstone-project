@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
-function AddVax({ user, vaccines, setVaccines, currentPetId }){
+function AddVax({ user, vaccines, setVaccines }){
+const params = useParams();
 let history = useHistory();
 const [ newVaxForm, setNewVaxForm ] = useState({
     name: '', 
@@ -10,13 +11,8 @@ const [ newVaxForm, setNewVaxForm ] = useState({
     expiration_date: '',
     name_of_vet_clinic: '',
     user_id: user.id,
-    pet_id: currentPetId
+    pet_id: params.petId
 })
-
-console.log(user.id)
-console.log(currentPetId)
-
-console.log(newVaxForm)
 
 function handleChange(e) {
     const key = e.target.name;
@@ -33,28 +29,27 @@ function addAVaccine(e){
         },
         body: JSON.stringify(newVaxForm)
     })
-    console.log(newVaxForm)
-    // .then(res => {
-    //     if (res.ok) {
-    //         res.json()
-    //         .then(data => {
-    //             setVaccines([...vaccines, data])
-    //             setNewVaxForm({
-    //                 name: '', 
-    //                 description: '', 
-    //                 date_received: '',
-    //                 expiration_date: '',
-    //                 name_of_vet_clinic: '',
-    //                 user_id: user.id,
-    //                 pet_id: currentPetId
-    //             })
-    //             history.push(`/pets/${currentPetId}`)
-    //         })
-    //     } else {
-    //         res.json()
-    //         .then(response => console.log(response))
-    //     }
-    // })
+    .then(res => {
+        if (res.ok) {
+            res.json()
+            .then(data => {
+                setVaccines([...vaccines, data])
+                setNewVaxForm({
+                    name: '', 
+                    description: '', 
+                    date_received: '',
+                    expiration_date: '',
+                    name_of_vet_clinic: '',
+                    user_id: user.id,
+                    pet_id: params.petId
+                })
+                history.push(`/pets/${params.petId}`)
+            })
+        } else {
+            res.json()
+            .then(response => console.log(response))
+        }
+    })
 }
 
     return(
@@ -69,6 +64,8 @@ function addAVaccine(e){
                     <p>Format YYYY/MM/DD</p>
                     <input name="expiration_date" placeholder="Expiration Date" className="user-input" onChange={handleChange}></input>
                     <input name="name_of_vet_clinic" placeholder="Issuing Vet Clinic" className="user-input" onChange={handleChange}></input>
+                    <input name="user_id" type="hidden" value={user.id}></input>
+                    <input name="pet_id" type="hidden" value={params.petId}></input>
                     <input type="submit" value="Save" className="form-button"></input>
                     </form>
                 </div>
