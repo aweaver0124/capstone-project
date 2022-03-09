@@ -58,14 +58,27 @@ return(
         <div id='new-pet-form-div'>
             <h2>Add Your Pet</h2>
             <form id='new-pet-form' onSubmit={createPet}>
-                    <input name="name" placeholder="Pet Name" className="user-input" onChange={handleChange}></input>
-                    <input name="species" placeholder="Dog or Cat" className="user-input" onChange={handleChange}></input>
-                    <input name="image" placeholder="Image URL" className="user-input" onChange={handleChange}></input>
-                    <input name="breed" placeholder="Breed" className="user-input" onChange={handleChange}></input>
-                    <input name="age" placeholder="Age" className="user-input" onChange={handleChange}></input>
-                    <input name="gender" placeholder="Male of Female" className="user-input" onChange={handleChange}></input>
-                    <input name="personality" placeholder="Personality" className="user-input" onChange={handleChange}></input>
-                    <input type="submit" value="Add Pet" className="form-button"></input>
+                    <p className='lable'><strong>Pet Name</strong></p>
+                    <input name="name" placeholder="" className="new-user-input" onChange={handleChange}></input>
+                    <p className='lable'><strong>Dog or Cat</strong></p>
+                    <select name="species" placeholder="" className="select-user-input" onChange={handleChange}>
+                        <option>Dog</option>
+                        <option>Cat</option>
+                    </select>
+                    <p className='lable'><strong>Image URL</strong></p>
+                    <input name="image" placeholder="" className="new-user-input" onChange={handleChange}></input>
+                    <p className='lable'><strong>Breed</strong></p>
+                    <input name="breed" placeholder="" className="new-user-input" onChange={handleChange}></input>
+                    <p className='lable'><strong>Age</strong></p>
+                    <input name="age" placeholder="" className="new-user-input" onChange={handleChange}></input>
+                    <p className='lable'><strong>Male of Female</strong></p>
+                    <select name="gender" placeholder="" className="select-user-input" onChange={handleChange}>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                    <p className='lable'><strong>Tell us about your pet!</strong></p>
+                    <input name="personality" placeholder="" id="personality-field" onChange={handleChange}></input>
+                    <div id='new-pet-button'><input type="submit" value="Add Pet" className="form-button"></input></div>
             </form>
         </div>
     </div>

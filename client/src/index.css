@@ -260,3 +260,52 @@ h3{
   border-radius: 15px;
   text-align: center;
 }
+
+.select-user-input{
+  width: 360px;
+}
+.new-user-input{
+  width: 350px;
+}
+
+#new-pet-form-div{
+  text-align: center;
+  background-color: white;
+  width: 400px;
+  margin-left: 550px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 2px solid #4AA0D5;
+}
+#new-pet-form-div h2{
+  margin-bottom: 0px;
+  text-align: center;
+}
+#new-pet-form{
+  text-align: left;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
+}
+
+#personality-field{
+  width: 350px;
+  height: 100px;
+}
+
+.lable{
+  margin-bottom: 2px;
+}
+
+#new-pet-button{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.form-button{
+  background-color: white;
+  border: 2px solid #4AA0D5;
+}
+.form-button:hover{
+  font-weight: bolder;
+}
