@@ -45,20 +45,20 @@ function Signup( {setUser} ) {
     }
 
     return(
-        
-            <div id='signup-container'>
+        <div>
+            <div id='signup'>
                 <h2>Sign Up!</h2>
                 <form id='signup-form' onSubmit={handleSubmit}>
-                    <p className='label'><strong>First Name</strong></p>
+                    <p className='lable'><strong>First Name</strong></p>
                     <input name="first_name" placeholder="" className="user-input" onChange={handleChange}></input>
-                    <p className='label'><strong>Last Name</strong></p>
+                    <p className='lable'><strong>Last Name</strong></p>
                     <input name="last_name" placeholder="" className="user-input" onChange={handleChange}></input>
-                    <p className='label'><strong>Username</strong></p>
+                    <p className='lable'><strong>Username</strong></p>
                     <input name="username" placeholder="" className="user-input" onChange={handleChange}></input>
-                    <p className='label'><strong>Password</strong></p>
+                    <p className='lable'><strong>Password</strong></p>
                     <input name="password" type="password" placeholder="" className="user-input" onChange={handleChange}></input>
-                    <p className='label'><strong>State</strong></p>
-                    <select name="state" placeholder="" className="user-input" onChange={handleChange}>
+                    <p className='lable'><strong>State</strong></p>
+                    <select name="state" placeholder="" className="select-user-input" onChange={handleChange}>
                         <option>Alabama</option>
                         <option>Alaska</option>
                         <option>Arizona</option>
@@ -122,6 +122,7 @@ function Signup( {setUser} ) {
                                 }}>Log in here. </NavLink></p>
                 </div>
             </div>
+        </div>
    
     )
 }

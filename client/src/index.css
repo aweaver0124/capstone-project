@@ -28,7 +28,7 @@ nav ul {
   align-items: center;
 }
 
-#signup-container, #login-container{
+#login-container{
   background-color: white;
   padding: 15px;
   width: 380px;
@@ -36,10 +36,24 @@ nav ul {
   border: 2px solid #4AA0D5;
 }
 
-#signup-container, #login-container h2 {
+#login-container h2 {
   text-align: center;
   margin: 5px;
 }
+
+#signup{
+  background-color: white;
+  padding: 15px;
+  width: 380px;
+  margin-left: 490px;
+  border: 2px solid #4AA0D5;
+}
+
+#signup h2 {
+  text-align: center;
+  margin: 5px;
+}
+
 
 #signup-form{
   padding: 10px;
