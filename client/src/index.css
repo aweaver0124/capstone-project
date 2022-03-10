@@ -2,9 +2,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #D8E9F0;
@@ -28,6 +26,27 @@ nav ul {
   display: flex;
   gap: 30px;
   align-items: center;
+}
+
+#signup-container, #login-container{
+  background-color: white;
+  padding: 15px;
+  width: 380px;
+  margin-left: 490px;
+  border: 2px solid #4AA0D5;
+}
+
+#signup-container, #login-container h2 {
+  text-align: center;
+  margin: 5px;
+}
+
+#signup-form{
+  padding: 10px;
+}
+
+#call-to-login, #call-to-signup{
+  text-align: center;
 }
 
 #empty-vaxxes{
@@ -87,28 +106,6 @@ nav ul {
 #landing-stuff p{
   font-size: larger;
 }
-#login-container, #signup-container {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  position: relative;
-  top: 50%;
-  /* background-color: white;
-  margin: auto;
-  padding: auto; */
-}
-
-#login-container h1, #signup-container h1 {
-  margin-bottom: 20px;
-  font-size: 40px;
-}
-
-#login-form, #signup-form {
-  display: flex;
-  flex-flow: column;
-  padding: 15px;
-  width: 300px;
-}
 
 #pet-thumbnail-holder{
   background-color: white;
@@ -128,7 +125,9 @@ nav ul {
   display: inline-block;
 }
 
-
+#welcome-message{
+  margin-left: 30px;
+}
 #my-pets{
   text-align: center;
   margin-bottom: 10px;
@@ -249,9 +248,6 @@ h3{
   text-align: center;
 }
 
-/* #update-pet-form{
-  
-} */
 
 #update-form-container{
   padding: 15px;
@@ -265,6 +261,9 @@ h3{
   width: 360px;
 }
 .new-user-input{
+  width: 350px;
+}
+.user-input{
   width: 350px;
 }
 
@@ -293,11 +292,17 @@ h3{
   height: 100px;
 }
 
-.lable{
-  margin-bottom: 2px;
+.label{
+  margin-bottom: 1px;
+  margin-top: 16px
 }
 
-#new-pet-button{
+.lable{
+  margin-bottom: 2px;
+  margin-top: 16px;
+}
+
+.submit-form-button{
   text-align: center;
   margin-top: 10px;
 }
@@ -305,7 +310,27 @@ h3{
 .form-button{
   background-color: white;
   border: 2px solid #4AA0D5;
+  width: 70px;
 }
 .form-button:hover{
   font-weight: bolder;
+}
+
+#new-vax-content-container{
+background-color: white;
+padding: 15px;
+width: 400px;
+margin-left: 530px;
+border: 2px solid #4AA0D5;
+}
+
+#new-vax-content-container h2 {
+  text-align: center;
+}
+
+#new-vax-form{
+  text-align: left;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
 }

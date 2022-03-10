@@ -53,20 +53,23 @@ function addAVaccine(e){
 }
 
     return(
-        <div>
+        <div id='new-vax-content-container'>
             <div><h2>Add Your Pet's Vaccinations</h2></div>
                 <div id='new-vax-form-container'>
                     <form id='new-vax-form' onSubmit={addAVaccine}>
-                    <input name="name" placeholder="Name of Vaccination" className="user-input" onChange={handleChange}></input>
-                    <input name="description" placeholder="Description" className="user-input" onChange={handleChange}></input>
-                    <p>Format YYYY/MM/DD</p>
-                    <input name="date_received" placeholder="Date Received" className="user-input" onChange={handleChange}></input>
-                    <p>Format YYYY/MM/DD</p>
-                    <input name="expiration_date" placeholder="Expiration Date" className="user-input" onChange={handleChange}></input>
-                    <input name="name_of_vet_clinic" placeholder="Issuing Vet Clinic" className="user-input" onChange={handleChange}></input>
+                    <p className='labe1'><strong>Name of Vaccination</strong></p>
+                    <input name="name" placeholder="" className="user-input" onChange={handleChange}></input>
+                    <p className='labe1'><strong>Description</strong></p>
+                    <input name="description" placeholder="" className="user-input" onChange={handleChange}></input>
+                    <p className='labe1'><strong>Date Received Format YYYY/MM/DD</strong></p>
+                    <input name="date_received" placeholder="" className="user-input" onChange={handleChange}></input>
+                    <p className='labe1'><strong>Expiration Date Format YYYY/MM/DD</strong></p>
+                    <input name="expiration_date" placeholder="" className="user-input" onChange={handleChange}></input>
+                    <p className='labe1'><strong>Issuing Vet Clinic</strong></p>
+                    <input name="name_of_vet_clinic" placeholder="" className="user-input" onChange={handleChange}></input>
                     <input name="user_id" type="hidden" value={user.id}></input>
                     <input name="pet_id" type="hidden" value={params.petId}></input>
-                    <input type="submit" value="Save" className="form-button"></input>
+                    <div className='submit-form-button'><input type="submit" value="Save" className="form-button"></input></div>
                     </form>
                 </div>
         </div>

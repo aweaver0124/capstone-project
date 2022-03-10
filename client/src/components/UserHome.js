@@ -14,7 +14,7 @@ function UserHome({ user, pets, setPets }){
        if (petThumbnail.length > 0){
            return (
             <div>
-                <h2>Welcome, {user.first_name}!</h2>
+                <h2 id='welcome-message'>Welcome, {user.first_name}!</h2>
                 <div id='pet-thumbnail-holder' style={{height:'500px'}}>
                     <h2 id='my-pets'>My Pets</h2>
                     {petThumbnail}

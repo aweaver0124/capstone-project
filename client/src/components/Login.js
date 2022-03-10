@@ -42,14 +42,15 @@ function Login({ setUser }) {
         }
         
         return(
-            <div id='login'>
                 <div id='login-container'>
-                    <h2>Login!</h2>
+                    <h2>Login</h2>
                     <form id='login-form' onSubmit={handleSubmit}>
-                        <input name="username" placeholder="Username" className="user-input" onChange={handleChange}></input>
-                        <input name="password" type="password" placeholder="Password" className="user-input" onChange={handleChange}></input>
+                        <p className='label'><strong>Username</strong></p>
+                        <input name="username" placeholder="" className="user-input" onChange={handleChange}></input>
+                        <p className='label'><strong>Password</strong></p>
+                        <input name="password" type="password" placeholder="" className="user-input" onChange={handleChange}></input>
                         {errors ? <div className="error-container"><p className="error">{errors.error}</p></div> : <div></div>}
-                        <input type="submit" value="Login" className="form-button"></input>
+                        <div className='submit-form-button'><input type="submit" value="Login" className="form-button"></input></div>
                     </form>
                     <div id="call-to-signup">
                     <p>Not a member? <NavLink
@@ -60,7 +61,7 @@ function Login({ setUser }) {
                                 }}>Sign up now! </NavLink></p>
                 </div>
                 </div>
-            </div>
+            
         )
 }
 

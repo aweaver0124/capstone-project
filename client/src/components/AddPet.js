@@ -78,7 +78,7 @@ return(
                     </select>
                     <p className='lable'><strong>Tell us about your pet!</strong></p>
                     <input name="personality" placeholder="" id="personality-field" onChange={handleChange}></input>
-                    <div id='new-pet-button'><input type="submit" value="Add Pet" className="form-button"></input></div>
+                    <div className='submit-form-button'><input type="submit" value="Add Pet" className="form-button"></input></div>
             </form>
         </div>
     </div>

@@ -62,8 +62,8 @@ function showFormTrue(){
         <div id='update-form-container'>
             <h4>Update Pet Information</h4>
             <form id='update-pet-form' onSubmit={handleUpdate}>
-            <input name="age" placeholder="Age" className="user-input" onChange={handleChange}></input>
-            <input name="personality" placeholder="Personality" className="user-input" onChange={handleChange}></input>
+            <input name="age" placeholder="Age" onChange={handleChange}></input>
+            <input name="personality" placeholder="Personality" onChange={handleChange}></input>
             <input type="submit" value="Save" className="form-button"></input>
             </form>
         </div>
